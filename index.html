@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Ali - Age Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-header">
+        <h1><i class="fas fa-hourglass-half"></i>Age Calculator</h1>
+        <p>Calculate precise age duration between two dates</p>
+      </div>
+
+      <div class="app-body">
+        <form id="calculatorForm">
+          <div class="form-grid">
+            <div class="input-group">
+              <label><i class="far fa-calendar-alt"></i> Birthdate:</label>
+              <input type="date" id="birthdate" required />
+            </div>
+            <div class="input-group">
+              <label><i class="far fa-calendar-check"></i> Current Date:</label>
+              <input type="date" id="currentdate" required />
+            </div>
+          </div>
+          <button type="button" onclick="calculateDuration()">
+            <i class="fas fa-calculator"></i>Calculate Duration
+          </button>
+        </form>
+
+        <div id="resultSummary"></div>
+        <div id="output" class="output"></div>
+
+        <!-- Calendar Display with Tailwind CSS -->
+        <div
+          id="calendarDisplay"
+          class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
+          <div
+            class="bg-purple-50 rounded-xl p-6 border border-gray-200 shadow-md transition-all hover:shadow-lg hover:border-purple-200 hover:-translate-y-1"
+          >
+            <h3
+              class="flex items-center gap-2 text-gray-600 font-semibold mb-2"
+            >
+              <i class="fas fa-baby"></i> Birth Date
+            </h3>
+            <div
+              id="birthDateDisplay"
+              class="text-xl font-semibold text-purple-600"
+            >
+              👶🏻 Select a date
+            </div>
+          </div>
+
+          <div
+            class="bg-purple-50 rounded-xl p-6 border border-gray-200 shadow-md transition-all hover:shadow-lg hover:border-purple-200 hover:-translate-y-1"
+          >
+            <h3
+              class="flex items-center gap-2 text-gray-600 font-semibold mb-2"
+            >
+              <i class="fas fa-calendar-day"></i> Current Date
+            </h3>
+            <div
+              id="currentDateDisplay"
+              class="text-xl font-semibold text-purple-600"
+            >
+              📅 Today
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
